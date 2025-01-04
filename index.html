@@ -1,368 +1,384 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Mizly's Portfolio</title>
-    <!-- Bulma Version 0.9.4-->
-    <link rel="stylesheet" href="https://unpkg.com/bulma@0.9.4/css/bulma.min.css" />
-    <link rel="stylesheet" type="text/css" href="showcase.css" />
-    <script
-      src="https://kit.fontawesome.com/2828f7885a.js"
-      integrity="sha384-WAsFbnLEQcpCk8lM1UTWesAf5rGTCvb2Y+8LvyjAAcxK1c3s5c0L+SYOgxvc6PWG"
-      crossorigin="anonymous"
-    ></script>
-    <link rel="icon" type="image/png" href="favicon.png" />
-  </head>
 
-  <body>
-    <!-- Begin Preloader -->
-    <div class="preloader-wrapper">
-      <div class="preloader">
-        <img src="img/preloader.gif" alt="" />
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://unpkg.com/bulma@1.0.2/css/bulma.min.css">
+  <link rel="stylesheet" href="index.css">
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+    integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <script src="https://kit.fontawesome.com/161cfb32c6.js" crossorigin="anonymous"></script>
+  <style>
+    @media(max-width: 500px) {
+      .reverse-columns {
+        flex-direction: column-reverse;
+        display: flex;
+      }
+    }
+
+    .titled {
+      font-family: 'Merriweather', serif !important;
+      font-size: 58px !important;
+      font-weight: 400 !important;
+      line-height: 64px !important;
+    }
+
+    .subtitled {
+      font-family: 'Merriweather', serif !important;
+      font-size: 20px !important;
+      font-weight: 400 !important;
+      line-height: 36px !important;
+    }
+
+    .header-text {
+      font-size: 18px !important;
+      font-weight: 600 !important;
+      line-height: 0px !important;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- NavBar va a todo lo ancho -->
+  <nav class="navbar is-dark is-fixed-top" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="#">
+        <h1 class="header-text">
+          Vu Cao
+        </h1>
+      </a>
+    </div>
+
+    <div class="navbar-menu">
+
+      <div class="navbar-end">
+        <a class="navbar-item" href="#">
+          <h1 class="header-text">
+            Home
+          </h1>
+        </a>
+
+        <a class="navbar-item" href="#about">
+          <h1 class="header-text">
+            About
+          </h1>
+        </a>
+
+        <a class="navbar-item" href="#projects">
+          <h1 class="header-text">
+            Projects
+          </h1>
+        </a>
+
+        <a class="navbar-item" href="#contact">
+          <h1 class="header-text">
+            Contact
+          </h1>
+        </a>
+
+      </div>
+
+    </div>
+  </nav>
+
+  <!-- Hero del producto -->
+  <section class="hero is-dark">
+    <div class="hero-body profile">
+      <div class="container">
+        <div class="columns is-vcentered reverse-columns">
+          <div class="column
+          is-10-mobile 
+          is-10-tablet 
+          is-5-desktop 
+          is-5-widescreen 
+          is-5-fullhd " data-aos="fade-down">
+            <h1 class="title titled is-1 mb-6">
+              Hi, I'm Vu Cao! I'm a <span id="biography" class="has-text-dark has-background-light"></span>
+            </h1>
+
+            <h2 class="subtitle subtitled">
+              2nd year CS @ Carleton University
+            </h2>
+            <div class="buttons">
+              <a href="https://github.com/mizly/" target="_blank" class="button is-light is-large">
+                <span class="icon">
+                  <i class="fab fa-github"></i>
+                </span>
+                <span>GitHub</span>
+              </a>
+              
+              <a href="https://www.linkedin.com/in/vu-k-cao/" target="_blank" class="button is-link is-large">
+                <span class="icon">
+                  <i class="fab fa-linkedin"></i>
+                </span>
+                <span>LinkedIn</span>
+              </a>
+
+              <a href="https://www.youtube.com/mizly" target="_blank" class="button is-danger is-large">
+                <span class="icon">
+                  <i class="fab fa-youtube"></i>
+                </span>
+                <span>YouTube</span>
+              </a>
+              
+              
+            </div>
+          </div>
+          <div data-aos="fade-right" id="bruh">
+            <figure class="image">
+              <img id="pfp" src="chill guy_00000.png">
+            </figure>
+          </div>
+
+        </div>
       </div>
     </div>
-    <!-- End Preloader-->
-    <!-- Begin Scroll Up Button -->
+  </section>
 
-    <form action="#home">
-      <button id="toTop" title="Go to top">
-        <i class="fas fa-angle-up"></i>
-      </button>
-    </form>
-    <!-- End Scroll Up Button -->
-
-    <!-- Begin Header -->
-    <div class="header-wrapper" id="home">
-      <!-- Begin Hero -->
-      <section class="hero is-large">
-        <!-- Begin Mobile Nav -->
-        <nav class="navbar is-fixed-top is-transparent is-hidden-desktop">
-          <!-- Begin Burger Menu -->
-          <div class="navbar-brand">
-            <div class="navbar-burger burger" data-target="mobile-nav">
-              <span></span>
-              <span></span>
-              <span></span>
-            </div>
+  <section class="hero is-light is-fullheight" id="about">
+    <div class="hero-body">
+      <div class="container">
+        <div class="columns  is-vcentered">
+          <div data-aos="fade-left" class="column
+">
+            <figure class="image">
+              <img src="assets/band.jpg">
+            </figure>
           </div>
-          <!-- End Burger Menu -->
-          <div id="mobile-nav" class="navbar-menu">
-            <div class="navbar-end">
-              <div class="navbar-item">
-                <a class="navbar-item" href="#home">
-                  Home
-                </a>
-              </div>
-              <div class="navbar-item">
-                <a class="navbar-item" href="#about-me">
-                  About Me
-                </a>
-              </div>
-              <div class="navbar-item">
-                <a class="navbar-item" href="#programming">
-                  Programming
-                </a>
-              </div>
-              <div class="navbar-item">
-                <a class="navbar-item" href="#video-editing">
-                  video editing
-                </a>
-              </div>
-              <div class="navbar-item">
-                <a class="navbar-item" href="#contact">
-                  Contact
-                </a>
-              </div>
-            </div>
-          </div>
-        </nav>
-        <!-- End Mobile Nav -->
-        <!-- Begin Hero Content-->
-        <div class="hero-body">
-          <div class="container has-text-centered">
-            <h1 class="subtitle">Hey there, I'm</h1>
-            <h2 class="title">mizly</h2>
-            <h1 class="subtitle profession">Turning static into cinematic</h1>
-          </div>
-        </div>
-        <!-- End Hero Content-->
-        <!-- Begin Hero Menu -->
-        <div class="hero-foot ">
-          <div class="hero-foot--wrapper">
-            <div class="columns">
-              <div class="column is-12 hero-menu-desktop has-text-centered is-fixed-top">
-                <ul>
-                  <li class="is-active">
-                    <a href="#home">Home</a>
-                  </li>
-                  <li>
-                    <a href="#about-me">About Me</a>
-                  </li>
-                  <li>
-                    <a href="#programming">Programming</a>
-                  </li>
-                  <li>
-                    <a href="#video-editing">Video Editing</a>
-                  </li>
-                  <li>
-                    <a href="#contact">Contact</a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- End Hero Menu -->
-      </section>
-      <!-- End Hero -->
-    </div>
-    <!-- End Header -->
-
-    <!-- Begin Main Content -->
-    <div class="main-content">
-      <!-- Begin About Me Section -->
-      <div class="section-light about-me" id="about-me">
-        <div class="container">
-          <div class="column is-12 about-me">
-            <h1 class="title has-text-centered section-title">About Me</h1>
-          </div>
-          <div class="columns is-multiline">
-            <div
-              class="column is-6 has-vertically-aligned-content"
-              data-aos="fade-right"
-            >
-              <p class="is-larger">
-                &emsp;&emsp;<strong
-                  >I'm an animator, motion graphics designer, and programmer based in Ottawa, Canada.</strong
-                >
-              </p>
-              <br />
-              <p>
-                I'm a first year Computer Science student with a passion for video editing.
-              </p>
-              <br />
-              <p>
-                By combining my technical knowledge with my creative skills, I'm able to create engaging and unique visual experiences.
-              </p>
-              <br />
-              <div class="is-divider"></div>
-              <div class="columns about-links">
-                <div class="column">
-                  <p class="heading">
-                    <strong>Instagram</strong>
-                  </p>
-                  <a class="subheading" href="https://www.instagram.com/mizlyuwu/" target="_blank">
-                    @mizlyuwu
-                  </a>
-                </div>
-                <div class="column">
-                  
-                  <p class="heading">
-                    <strong>YouTube</strong>
-                  </p>
-                  <a class="subheading" href="https://www.youtube.com/mizly" target=”_blank”>
-                    Mizly
-                  </a>
-                </div>
-                <div class="column">
-                  <p class="heading">
-                    <strong>GitHub</strong>
-                  </p>
-                  <a class="subheading" href="https://github.com/mizly" target="_blank">
-                    mizly
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div class="column is-6 right-image " data-aos="fade-left">
-              <iframe width="560" height="315" src="https://www.youtube.com/embed/puDkVf2zwPU?si=2WjmxF4ym9Sqy0HI&amp;controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- End About Me Content -->
-      <!-- Begin Programming Content -->
-      <div class="section-color services" id="programming">
-        <div class="container">
-          <div class="columns is-multiline">
-            <div
-              class="column is-12 about-me"
-              data-aos="fade-in"
-              data-aos-easing="linear"
-            >
-              <h1 class="title has-text-centered section-title">Projects</h1>
-            </div>
-            <div class="columns is-centered">
-              <div
-              class="column is-4 has-text-centered is-centered"
-              data-aos="fade-in"
-              data-aos-easing="linear"
-            >
-            <a href="https://github.com/EdwinNgui/Walk-in-the-Park" target=”_blank” class="subtitle has-text-centered section-title">WALK IN THE PARK</a>
-              <hr />
-              <a href="https://devpost.com/software/walk-in-the-park" target="_blank" style="color: thistle;">
-                <h2 align="left">
-                  Devpost
-                </h2>
-                </a>
-              <a href="https://github.com/EdwinNgui/Walk-in-the-Park" target="_blank" style="color: thistle;">
-                <h2 align="left">
-                  GitHub
-                </h2>
-                </a>
-                  <br>
-              <h2 align="left">
-                Location based music app for your community.
-              </h2>
-            </div>
-              <div
-              class="column is-4 has-text-centered is-centered"
-              data-aos="fade-in"
-              data-aos-easing="linear"
-            >
-            <a href="https://github.com/EdwinNgui/TRACY" target=”_blank” class="subtitle has-text-centered section-title">TRACY</a>
-              <hr />
-              <a href="https://devpost.com/software/tracy-dm41vu" target="_blank" style="color: thistle;">
-                <h2 align="left">
-                  Devpost
-                </h2>
-                </a>
-              <a href="https://github.com/EdwinNgui/TRACY" target="_blank" style="color: thistle;">
-                <h2 align="left">
-                  GitHub
-                </h2>
-                </a>
-                  <br>
-              <h2 align="left">
-                Realtime AI-powered Tennis Analysis and Coaching.
-              </h2>
-            </div>
-            <div
-            class="column is-4 has-text-centered"
-            data-aos="fade-in"
-            data-aos-easing="linear"
-          >
-          <a href="https://github.com/FinityFly/melodica" target=”_blank” class="subtitle has-text-centered section-title">Melodica</a>
-            <hr />
-            <a href="https://devpost.com/software/melodica-y0267b" target="_blank" style="color: thistle;">
-              <h2 align="left">
-                Devpost
-              </h2>
-            </a>
-              <a href="https://github.com/FinityFly/melodica" target="_blank" style="color: thistle;">
-                <h2 align="left">
-                  GitHub
-                </h2>
-                  </a>
-                  <br>
-            <h2 align="left">
-              Automatic Audio/Vocals Isolation and Extraction.
+          <div data-aos="fade-down" class="column
+          is-10-mobile is-offset-1-mobile
+          is-10-tablet is-offset-1-tablet
+          is-5-desktop is-offset-1-desktop
+          is-5-widescreen is-offset-1-widescreen
+          is-5-fullhd is-offset-1-fullhd">
+            <h1 class="titled title is-1 mb-6">
+              “create with the heart, build with the mind.” <span class="is-size-5 has-text-grey">- Criss Jami</span>
+            </h1>
+            <h2 class="subtitled subtitle">
+              I’m a 2nd year Computer Science student exploring machine learning, music, and visual design.
+              <br><br>
+              By combining my technical knowledge with my creative skills, I'm able to create engaging and unique interactive experiences.
             </h2>
           </div>
-            </div>
-          </div>
+
         </div>
       </div>
-      <!-- End Progamming Content -->
-      <!-- Begin Video Editing Content -->
-      <div class="section-dark my-work" id="video-editing">
-        <div class="container">
-          <div
-            class="columns is-multiline"
-            data-aos="fade-in"
-            data-aos-easing="linear"
-          >
-            <div class="column is-12">
-              <h1 class="title has-text-centered section-title">Personal Work</h1>
-              <h2 class="subtitle">
-                I love finding different and creative ways to tell a story. Here are some of my favourite personal projects.
-              </h2>
-              <br/>
-            </div>
-            <div class="column is-3">
-              <a href="#">
-                <iframe width="320" height="375" src="https://www.instagram.com/p/CDKOxdigfQj/embed" scrolling="no"></iframe> 
-              </a>
-            </div>
-            <div class="column is-3">
-              <a href="#">
-                <iframe width="320" height="375" src="https://www.instagram.com/p/B6ViYnPAMD7/embed" scrolling="no"></iframe>
-              </a>
-            </div>
-            <div class="column is-3">
-              <a href="#">
-                <iframe width="320" height="375" src="https://www.instagram.com/p/CFAQXHCAGg1/embed" scrolling="no"></iframe> 
-              </a>
-            </div>
-            <div class="column is-3">
-              <a href="#">
-                <iframe width="320" height="375" src="https://www.instagram.com/p/CRME-IPLR3k/embed" scrolling="no"></iframe>
-              </a>
-            </div>
-            <div class="column is-3">
-              <a href="#">
-                <iframe width="640" height="360" src="https://www.youtube.com/embed/CdUqFc5YHsI?si=2WjmxF4ym9Sqy0HI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-              </a>
-            </div>
-            <div class="column is-3">
-            </div>
-            <div class="column is-3">
-              <a href="#">
-                <iframe width="640" height="360" src="https://www.youtube.com/embed/9FS4DzIGfic?si=3YlicXHvm5duOL5m" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-              </a>
-            </div>
-          </div>
+    </div>
+  </section>
+
+  <section class="hero is-dark is-fullheight" id="projects">
+    <div class="hero-body">
+      <div class="container">
+        <div data-aos="fade-down">
+          <h1 class="title titled is-1 mb-6 has-text-centered">
+            Projects
+          </h1>
         </div>
-      </div>
-      <!-- End Work Content -->
-      <!-- Begin Contact Content -->
-      <div class="section-light contact" id="contact">
-        <div class="container">
-          <div
-            class="columns is-multiline"
-            data-aos="fade-in-up"
-            data-aos-easing="linear"
-          >
-            <div class="column is-12 about-me">
-              <h1 class="title has-text-centered section-title">
-                Contact
-              </h1>
-              <p class="subtitle" style="text-align: left;">
-                You can reach me on Discord at "mizly". <br/><br/>Thanks for reading all the way through, as a bonus here is a sneak peak at an upcoming project: <br/><br/>
-                <div style="text-align: center;">
-                  <iframe width="640" height="360" src="https://www.youtube.com/embed/eTDnWP8Cwpc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        <div class="columns projects is-vcentered reverse-columns" style="display: flex; align-items: stretch;">
+          <div data-aos="fade-right" class="column is-4">
+            <div class="card is-shady has-background-light equal-height">
+              <header class="card-header no-shadow">
+                <p class="card-header-title has-text-dark is-size-4">Walk in the Park</p>
+                <a href="https://devpost.com/software/walk-in-the-park" target="_blank">
+                  <button class="card-header-icon" aria-label="Link">
+                    <span class="icon">
+                      <i class="fa-solid fa-arrow-up-right-from-square has-text-dark"></i>
+                    </span>
+                  </button>
+                </a>
+                <a href="https://github.com/EdwinNgui/Walk-in-the-Park" target="_blank">
+                  <button class="card-header-icon" aria-label="Source Code">
+                    <span class="icon">
+                      <i class="fa-solid fa-code has-text-dark"></i>
+                    </span>
+                  </button>
+                </a>
+              </header>
+        
+              <p class="card-header-title project-caption has-text-grey is-size-6 has-text-weight-normal">GenAI Genesis | April 2024</p>
+              <div class="card-image">
+                <figure class="image is-4by3">
+                  <img src="assets/walk-in-the-park.jpg" alt="Placeholder image" class="modal-button" data-target="modal-image2">
+                </figure>
+              </div>
+              <div class="card-content">
+                <div class="content has-text-dark">
+                  <p>
+                    Winning Best AI in Education, this project encourages interaction, awareness and contribution towards local communities.
+                    <br><br>
+                    With a location based gaming experience similar to Pokémon Go, users can explore different locations to discover curated songs based on local communities, promoting cultural understanding.
+                  </p>
+                  <span class="button is-dark is-outlined">React Native</span>
+                  <span class="button is-dark is-outlined">Android Studio</span>
+                  <span class="button is-dark is-outlined">Gemini</span>
                 </div>
-               </p>
+              </div>
+            </div>
+          </div>
+        
+          <!-- Additional Cards -->
+          <div data-aos="fade-right" class="column is-4">
+            <div class="card is-shady has-background-light equal-height">
+              <header class="card-header no-shadow">
+                <p class="card-header-title has-text-dark is-size-4">TRACY</p>
+                <a href="https://devpost.com/software/tracy-dm41vu" target="_blank">
+                  <button class="card-header-icon" aria-label="Link">
+                    <span class="icon">
+                      <i class="fa-solid fa-arrow-up-right-from-square has-text-dark"></i>
+                    </span>
+                  </button>
+                </a>
+                <a href="https://github.com/EdwinNgui/TRACY" target="_blank">
+                  <button class="card-header-icon" aria-label="Source Code">
+                    <span class="icon">
+                      <i class="fa-solid fa-code has-text-dark"></i>
+                    </span>
+                  </button>
+                </a>
+              </header>
+        
+              <p class="card-header-title project-caption has-text-grey is-size-6 has-text-weight-normal">QHacks | February 2024</p>
+              <div class="card-image">
+                <figure class="image is-4by3">
+                  <img src="assets/tracy.jpg" alt="Placeholder image" class="modal-button" data-target="modal-image2">
+                </figure>
+              </div>
+              <div class="card-content">
+                <div class="content has-text-dark">
+                  <p>
+                    TRACY took 3rd place at QHacks 2024 by combining computer vision and machine learning to analyze tennis gameplay.
+                    <br><br>
+                    Using React.js for dynamic visuals, the project helps athletes improve by providing trajectory graphs from a monocular viewpoint and providing AI-driven insights, making a mark in sports tech innovation.
+                  </p>
+                  <span class="button is-dark is-outlined">Python</span>
+                  <span class="button is-dark is-outlined">React.js</span>
+                  <span class="button is-dark is-outlined">OpenCV</span>
+                  <span class="button is-dark is-outlined">FFmpeg</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        
+          <div data-aos="fade-right" class="column is-4">
+            <div class="card is-shady has-background-light equal-height">
+              <header class="card-header no-shadow">
+                <p class="card-header-title has-text-dark is-size-4">Melodica</p>
+                <a href="https://devpost.com/software/melodica-y0267b" target="_blank">
+                  <button class="card-header-icon" aria-label="Link">
+                    <span class="icon">
+                      <i class="fa-solid fa-arrow-up-right-from-square has-text-dark"></i>
+                    </span>
+                  </button>
+                </a>
+                <a href="https://github.com/FinityFly/melodica" target="_blank">
+                  <button class="card-header-icon" aria-label="Source Code">
+                    <span class="icon">
+                      <i class="fa-solid fa-code has-text-dark"></i>
+                    </span>
+                  </button>
+                </a>
+              </header>
+        
+              <p class="card-header-title project-caption has-text-grey is-size-6 has-text-weight-normal">McGill AI Hacks | October 2023</p>
+              <div class="card-image">
+                <figure class="image is-4by3">
+                  <img src="assets/melodica.png" alt="Placeholder image" class="modal-button" data-target="modal-image2">
+                </figure>
+              </div>
+              <div class="card-content">
+                <div class="content has-text-dark">
+                  <p>
+                    Awarded Best Hack for All Arts, Melodica is a musician's Swiss Army knife, providing various functionalities for musicians. 
+                    <br><br>
+                    After uploading an audio file, Melodica automatically separates and visualizes distinct instrumentals and audio tracks. A real-time and interactive audio player allows for individual track manipulation by the users.
+                  </p>
+                  <span class="button is-dark is-outlined">Python</span>
+                  <span class="button is-dark is-outlined">Three.js</span>
+                  <span class="button is-dark is-outlined">BasicPitch</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
+        
+        
+
       </div>
-      <!-- End Contact Content -->
     </div>
-    <!-- End Main Content -->
+  </section>
 
-    <!-- Begin Footer -->
-    <div class="footer">
-      <p>
-        <strong class="white">Bulma</strong> by <a href="http://jgthms.com">Jeremy Thomas</a>.
-        The source code is licensed
-        <a href="http://opensource.org/licenses/mit-license.php">MIT</a>.
-      </p>
+  <section class="hero is-medium has-text-centered" id="contact">
+    <div class="hero-body">
+      <div class="container">
+        <div class="columns is-centered">
+          <div data-aos="zoom-in-up" class="column is-8">
+            <h1 class="title titled is-1 mb-6">
+              Contact
+            </h1>
+            <div class="buttons is-centered">
+              <a href="https://github.com/mizly/" target="_blank" class="button is-light">
+                <span class="icon">
+                  <i class="fab fa-github"></i>
+                </span>
+                <span>GitHub</span>
+              </a>
+              
+              <a href="https://www.linkedin.com/in/vu-k-cao/" target="_blank" class="button is-link">
+                <span class="icon">
+                  <i class="fab fa-linkedin"></i>
+                </span>
+                <span>LinkedIn</span>
+              </a>
+
+              <a href="Vu Cao - Resume.pdf" target="_blank" download class="button is-light">
+                <span class="icon">
+                  <i class="fa-solid fa-address-card"></i>
+                </span>
+                <span>Resume</span>
+              </a>
+            </div>
+            <h2 class="subtitle subtitled">
+              Publications/further info available upon request at vu.khanh.cao@gmail.com
+            </h2>
+          </div>
+        </div>
+
+      </div>
     </div>
-    <!-- End Footer -->
+  </section>
 
-    <!-- Scripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="showcase.js"></script>
-    <link href="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.css" rel="stylesheet">
-    <script src="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.js"></script>
-    <script>
-      AOS.init({
-        easing: "ease-out",
-        duration: 800,
-      });
-    </script>
-  </body>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/TypewriterJS/2.13.1/core.min.js"></script>
+  <script>
+    new Typewriter('#biography', {
+      strings: ['developer.', 'designer.', 'VFX artist.', 'musician.'],
+      autoStart: true,
+      loop: true,
+    });
+  </script>
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      once: true
+    });
+  </script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const imageElement = document.getElementById("pfp");
+    const images = ["chill guy_00000.png", "chill guy_00001.png"];
+    let currentIndex = 0;
+
+    setInterval(() => {
+      currentIndex = (currentIndex + 1) % images.length;
+      imageElement.src = images[currentIndex];
+    }, 500); // Change image every 0.5s
+  });
+</script>
+</body>
+
 </html>
