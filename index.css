@@ -42,3 +42,8 @@
 html {
   scroll-behavior: smooth;
 }
+
+.navbar-item{
+  padding-top: 5%;
+  padding-bottom: 5%;
+}

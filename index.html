@@ -43,18 +43,68 @@
     }
 
     .titled {
-      font-family: 'Merriweather', serif !important;
-      font-size: 58px !important;
-      font-weight: 400 !important;
-      line-height: 64px !important;
-    }
+  font-family: 'Merriweather', serif !important;
+  font-size: 58px !important;
+  font-weight: 400 !important;
+  line-height: 64px !important;
+}
 
-    .subtitled {
-      font-family: 'Merriweather', serif !important;
-      font-size: 20px !important;
-      font-weight: 400 !important;
-      line-height: 36px !important;
-    }
+@media (max-width: 1024px) {
+  /* Tablet and smaller devices */
+  .titled {
+    font-size: 48px !important;
+    line-height: 54px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Mobile devices */
+  .titled {
+    font-size: 36px !important;
+    line-height: 42px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Small mobile devices */
+  .titled {
+    font-size: 28px !important;
+    line-height: 34px !important;
+  }
+}
+
+
+.subtitled {
+  font-family: 'Merriweather', serif !important;
+  font-size: 20px !important;
+  font-weight: 400 !important;
+  line-height: 36px !important;
+}
+
+@media (max-width: 1024px) {
+  /* Tablet and smaller devices */
+  .subtitled {
+    font-size: 18px !important;
+    line-height: 32px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Mobile devices */
+  .subtitled {
+    font-size: 16px !important;
+    line-height: 28px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Small mobile devices */
+  .subtitled {
+    font-size: 14px !important;
+    line-height: 24px !important;
+  }
+}
+
 
     .header-text {
       font-size: 18px !important;
@@ -65,7 +115,6 @@
 </head>
 
 <body>
-  <!-- NavBar va a todo lo ancho -->
   <nav class="navbar is-dark is-fixed-top" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
       <a class="navbar-item" href="#">
@@ -73,9 +122,16 @@
           Vu Cao
         </h1>
       </a>
+
+      <a role="button" class="navbar-burger has-text-light" aria-label="menu" aria-expanded="true" data-target="navbar-menu-id">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
     </div>
 
-    <div class="navbar-menu">
+    <div id="navbar-menu-id" class="navbar-menu">
 
       <div class="navbar-end">
         <a class="navbar-item" href="#">
@@ -126,21 +182,21 @@
               2nd year CS @ Carleton University
             </h2>
             <div class="buttons">
-              <a href="https://github.com/mizly/" target="_blank" class="button is-light is-large">
+              <a href="https://github.com/mizly/" target="_blank" class="button is-light is-large is-size-6-mobile is-size-4-desktop">
                 <span class="icon">
                   <i class="fab fa-github"></i>
                 </span>
                 <span>GitHub</span>
               </a>
               
-              <a href="https://www.linkedin.com/in/vu-k-cao/" target="_blank" class="button is-link is-large">
+              <a href="https://www.linkedin.com/in/vu-k-cao/" target="_blank" class="button is-link is-large is-size-6-mobile is-size-4-desktop">
                 <span class="icon">
                   <i class="fab fa-linkedin"></i>
                 </span>
                 <span>LinkedIn</span>
               </a>
 
-              <a href="https://www.youtube.com/mizly" target="_blank" class="button is-danger is-large">
+              <a href="https://www.youtube.com/mizly" target="_blank" class="button is-danger is-large is-size-6-mobile is-size-4-desktop">
                 <span class="icon">
                   <i class="fab fa-youtube"></i>
                 </span>
@@ -400,6 +456,30 @@
       imageElement.src = images[currentIndex];
     }, 500); // Change image every 0.5s
   });
+</script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+
+// Get all "navbar-burger" elements
+const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+
+// Add a click event on each of them
+$navbarBurgers.forEach( el => {
+  el.addEventListener('click', () => {
+
+    // Get the target from the "data-target" attribute
+    const target = el.dataset.target;
+    const $target = document.getElementById(target);
+
+    // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+    el.classList.toggle('is-active');
+    $target.classList.toggle('is-active');
+
+  });
+});
+
+});
 </script>
 </body>
 
