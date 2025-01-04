@@ -2,6 +2,7 @@
   display: flex; /* Ensures flexbox layout for alignment */
   align-items: stretch; /* Ensures children can stretch to fill */
   padding-bottom: 0%; /* Remove any default padding */
+  padding-top: 8%; /* Remove any default padding */
 } 
 
 .columns.is-vcentered {
