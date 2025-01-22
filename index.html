@@ -37,7 +37,7 @@
   <style>
     @media(max-width: 500px) {
       .reverse-columns {
-        flex-direction: column-reverse;
+        flex-direction: column;
         display: flex;
       }
     }
@@ -79,6 +79,7 @@
   font-size: 20px !important;
   font-weight: 400 !important;
   line-height: 36px !important;
+  padding-bottom: 36px !important;
 }
 
 @media (max-width: 1024px) {
@@ -86,6 +87,7 @@
   .subtitled {
     font-size: 18px !important;
     line-height: 32px !important;
+    padding-bottom: 32px !important;
   }
 }
 
@@ -94,6 +96,7 @@
   .subtitled {
     font-size: 16px !important;
     line-height: 28px !important;
+    padding-bottom: 28px !important;
   }
 }
 
@@ -102,6 +105,7 @@
   .subtitled {
     font-size: 14px !important;
     line-height: 24px !important;
+    padding-bottom: 24px !important;
   }
 }
 
@@ -227,7 +231,7 @@
     <div class="hero-body">
       <div class="container">
         <div class="columns  is-vcentered">
-          <div data-aos="fade-left" class="column
+          <div data-aos="fade-right" class="column
 ">
             <figure class="image">
               <img src="assets/band.jpg">
@@ -240,12 +244,12 @@
           is-5-widescreen is-offset-1-widescreen
           is-5-fullhd is-offset-1-fullhd">
             <h1 class="titled title is-1 mb-6">
-              “create with the heart, build with the mind.” <span class="is-size-5 has-text-grey">- Criss Jami</span>
+              “everything you can imagine is real.” <span class="is-size-5 has-text-grey">- Pablo Picasso</span>
             </h1>
             <h2 class="subtitled subtitle">
               I’m a 2nd year Computer Science student exploring machine learning, music, and visual design.
               <br><br>
-              By combining my technical knowledge with my creative skills, I'm able to create engaging and unique interactive experiences.
+              By combining technical knowledge and creative skills, I'm able to create engaging and unique interactive experiences.
             </h2>
           </div>
 
@@ -287,7 +291,7 @@
               <p class="card-header-title project-caption has-text-grey is-size-6 has-text-weight-normal">uOttaHack 7 | January 2025</p>
               <div class="card-image">
                 <figure class="image is-4by3">
-                  <img src="assets/jarvis webgl.png" alt="Placeholder image" class="modal-button" data-target="modal-image2">
+                  <img src="assets/jarvis demo.gif" alt="Placeholder image" class="modal-button" data-target="modal-image2">
                 </figure>
               </div>
               <div class="card-content">
@@ -295,7 +299,7 @@
                   <p>
                     Powered by Blackberry QNX, JARVIS is an innovative integration of physical and digital processing to produce 3D views from 2D spatial data. 
                     <br><br>
-                    JARVIS provides a cost efficient solution that translates images from ANY camera into web-ready 3D models without expensive equipment, using machine learning and <a target="_blank" href="https://repo-sam.inria.fr/fungraph/3d-gaussian-splatting/">Gaussian Splatting</a>.
+                    JARVIS provides a cost efficient solution that translates images/videos from ANY camera into web-ready 3D models without expensive equipment, using machine learning and <a target="_blank" href="https://repo-sam.inria.fr/fungraph/3d-gaussian-splatting/">Gaussian Splatting</a>.
                   </p>
                   <span class="button is-dark is-outlined">Hardware</span>
                   <span class="button is-dark is-outlined">QNX</span>
@@ -398,7 +402,7 @@
     <div class="hero-body">
       <div class="container">
         <div class="columns is-centered">
-          <div data-aos="zoom-in-up" class="column is-8">
+          <div data-aos="fade-down" class="column is-8">
             <h1 class="title titled is-1 mb-6">
               Designs
             </h1>
@@ -408,47 +412,61 @@
             
           </div>
         </div>
-        
+      </div>
         <div class="columns projects is-vcentered reverse-columns" style="display: flex; align-items: stretch;">
           <div data-aos="fade-right" class="column is-4">
-            <video loop="true" autoplay="autoplay" controls muted>
+            <video style="width: 100%; height: 100%; object-fit: cover;" loop="true" autoplay="autoplay" controls muted>
               <source src="assets/designs/yorushika.mov">
             </video>
           </div>
 
           <div data-aos="fade-right" class="column is-4">
-            <video loop="true" autoplay="autoplay" controls muted>
+            <video style="width: 100%; height: 100%; object-fit: cover;" loop="true" autoplay="autoplay" controls muted>
               <source src="assets/designs/hmm.mp4">
             </video>
           </div>
 
           <div data-aos="fade-right" class="column is-4">
-            <video loop="true" autoplay="autoplay" controls muted>
+            <video style="width: 100%; height: 100%; object-fit: cover;" loop="true" autoplay="autoplay" controls muted>
               <source src="assets/designs/silent.mov">
             </video>
           </div>
         </div>
 
-      </div>
+      
         <div class="columns projects is-vcentered reverse-columns" style="display: flex; align-items: stretch;">
           <div data-aos="fade-right" class="column is-4">
-            <figure class="image is-1by1">
+            <figure style="width: 100%; height: 100%; object-fit: cover;" class="image is-1by1">
               <img src="assets/designs/trivia.gif" />
             </figure>
           </div>
 
           <div data-aos="fade-right" class="column is-4">
-            <video loop="true" autoplay="autoplay" controls muted>
+            <video style="width: 100%; height: 100%; object-fit: cover;" loop="true" autoplay="autoplay" controls muted>
               <source src="assets/designs/girl in red.mp4">
             </video>
           </div>
 
           <div data-aos="fade-right" class="column is-4">
-            <video loop="true" autoplay="autoplay" controls muted>
+            <video style="width: 100%; height: 100%; object-fit: cover;" loop="true" autoplay="autoplay" controls muted>
               <source src="assets/designs/hutao.mp4">
             </video>
           </div>
         </div>
+
+        <div class="columns projects is-vcentered reverse-columns" style="display: flex; align-items: stretch;">
+          <div data-aos="fade-right" class="column is-6">
+            <video style="width: 100%; height: 100%; object-fit: cover;" loop="true" autoplay="autoplay" controls muted>
+              <source src="assets/designs/jarvis.mp4">
+            </video>
+          </div>
+          <div data-aos="fade-right" class="column is-6">
+            <video style="width: 100%; height: 100%; object-fit: cover;" loop="true" autoplay="autoplay" controls muted>
+              <source src="assets/designs/tracy.mp4">
+            </video>
+          </div>
+        </div>
+
     </div>
   </section>
 
@@ -456,7 +474,7 @@
     <div class="hero-body">
       <div class="container">
         <div class="columns is-centered">
-          <div data-aos="zoom-in-up" class="column is-8">
+          <div data-aos="fade-down" class="column is-8">
             <h1 class="title titled is-1 mb-6">
               Contact
             </h1>
