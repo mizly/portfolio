@@ -36,8 +36,15 @@
 <!-- Meta Tags Generated via https://www.opengraph.xyz -->
   <style>
     @media(max-width: 500px) {
-      .reverse-columns {
+      .columns {
         flex-direction: column;
+        display: flex;
+      }
+    }
+
+    @media(max-width: 500px) {
+      .reverse-columns {
+        flex-direction: column-reverse;
         display: flex;
       }
     }
@@ -217,7 +224,7 @@
             </div>
           </div>
           <div data-aos="fade-right" id="bruh">
-            <figure class="image">
+            <figure class="image" style="padding-top: 10%;">
               <img id="pfp" src="chill guy_00000.png">
             </figure>
           </div>
@@ -267,7 +274,7 @@
           </h1>
         </div>
        
-        <div class="columns projects is-vcentered reverse-columns" style="display: flex; align-items: stretch;">
+        <div class="columns projects is-vcentered " style="display: flex; align-items: stretch;">
           <div data-aos="fade-right" class="column is-4">
             <div class="card is-shady has-background-light equal-height">
               <header class="card-header no-shadow">
@@ -413,7 +420,7 @@
           </div>
         </div>
       </div>
-        <div class="columns projects is-vcentered reverse-columns" style="display: flex; align-items: stretch;">
+        <div class="columns projects is-vcentered " style="display: flex; align-items: stretch;">
           <div data-aos="fade-right" class="column is-4">
             <video style="width: 100%; height: 100%; object-fit: cover;" loop="true" autoplay="autoplay" controls muted>
               <source src="assets/designs/yorushika.mov">
@@ -434,7 +441,7 @@
         </div>
 
       
-        <div class="columns projects is-vcentered reverse-columns" style="display: flex; align-items: stretch;">
+        <div class="columns projects is-vcentered " style="display: flex; align-items: stretch;">
           <div data-aos="fade-right" class="column is-4">
             <figure style="width: 100%; height: 100%; object-fit: cover;" class="image is-1by1">
               <img src="assets/designs/trivia.gif" />
@@ -454,7 +461,7 @@
           </div>
         </div>
 
-        <div class="columns projects is-vcentered reverse-columns" style="display: flex; align-items: stretch;">
+        <div class="columns projects is-vcentered " style="display: flex; align-items: stretch;">
           <div data-aos="fade-right" class="column is-6">
             <video style="width: 100%; height: 100%; object-fit: cover;" loop="true" autoplay="autoplay" controls muted>
               <source src="assets/designs/jarvis.mp4">
