@@ -35,6 +35,20 @@
 
 <!-- Meta Tags Generated via https://www.opengraph.xyz -->
   <style>
+    @media(max-width: 1024px) {
+      .profile-columns {
+        flex-direction: column;
+        display: flex;
+      }
+    }
+
+    @media(max-width: 1024px) {
+      .profile-reverse-columns {
+        flex-direction: column-reverse;
+        display: flex;
+      }
+    }
+
     @media(max-width: 500px) {
       .columns {
         flex-direction: column;
@@ -59,7 +73,7 @@
 @media (max-width: 1024px) {
   /* Tablet and smaller devices */
   .titled {
-    font-size: 48px !important;
+    font-size: 32px !important;
     line-height: 54px !important;
   }
 }
@@ -67,7 +81,7 @@
 @media (max-width: 768px) {
   /* Mobile devices */
   .titled {
-    font-size: 36px !important;
+    font-size: 28px !important;
     line-height: 42px !important;
   }
 }
@@ -184,7 +198,7 @@
   <section class="hero is-dark">
     <div class="hero-body profile">
       <div class="container">
-        <div class="columns is-vcentered reverse-columns">
+        <div class="columns is-vcentered profile-reverse-columns">
           <div class="column
           is-10-mobile 
           is-10-tablet 
@@ -237,7 +251,7 @@
   <section class="hero is-light is-fullheight" id="about">
     <div class="hero-body">
       <div class="container">
-        <div class="columns  is-vcentered">
+        <div class="columns profile-columns  is-vcentered">
           <div data-aos="fade-right" class="column
 ">
             <figure class="image">
@@ -273,7 +287,7 @@
             Projects
           </h1>
           <h2 class="subtitle subtitled">
-            I've worked on many projects, here are some that I am most proud of!
+            I've worked on many projects, here are some of my personal favourites that you may also like!
           </h2>
           
         </div>
@@ -308,7 +322,7 @@
               <div class="card-content">
                 <div class="content has-text-dark">
                   <p>
-                    Powered by Blackberry QNX, JARVIS is an innovative integration of physical and digital processing to produce 3D views from 2D spatial data. 
+                    Powered by Blackberry QNX, JARVIS is an innovative integration of physical and digital processing to translate 2D spatial data to 3D.
                     <br><br>
                     JARVIS provides a cost efficient solution that translates images/videos from ANY camera into web-ready 3D models without expensive equipment, using machine learning and <a target="_blank" href="https://repo-sam.inria.fr/fungraph/3d-gaussian-splatting/">Gaussian Splatting</a>.
                   </p>
@@ -355,7 +369,7 @@
                     With a location based gaming experience similar to Pokémon Go, users can explore different locations to discover curated songs based on local communities, promoting cultural understanding.
                   </p>
                   <span class="button is-dark is-outlined">React Native</span>
-                  <span class="button is-dark is-outlined">Android Studio</span>
+                  <span class="button is-dark is-outlined">Android</span>
                   <span class="button is-dark is-outlined">Gemini</span>
                 </div>
               </div>
