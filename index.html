@@ -5,740 +5,327 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Vu Cao - Portfolio</title>
-  <link rel="stylesheet" href="https://unpkg.com/bulma@1.0.2/css/bulma.min.css">
-  <link rel="stylesheet" href="index.css">
-  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
-    integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-  <link href="https://fonts.googleapis.com/css2?family=Merriweather&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-  <link rel="icon" href="https://static.wikia.nocookie.net/rfti/images/4/42/Pupsik.png" type="image/x-icon">
-  <script src="https://kit.fontawesome.com/161cfb32c6.js" crossorigin="anonymous"></script>
-
-  <!-- HTML Meta Tags -->
-  <title>Vu Cao - Portfolio</title>
   <meta name="description"
-    content="I’m a 3rd year Computer Science student exploring machine learning, music, and visual design. This is a collection of my personal and creative projects.">
-  <meta name="og:site_name" content="Vu Cao - Portfolio">
-  </meta>
-  <!-- Facebook Meta Tags -->
-  <meta property="og:url" content="https://mizly.design">
+    content="Vu Cao is a Computer Science student exploring machine learning, hardware, web development, motion graphics, and 3D.">
+  <meta property="og:site_name" content="Vu Cao - Portfolio">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Vu Cao - Portfolio">
   <meta property="og:description"
-    content="I’m a 3rd year Computer Science student exploring machine learning, music, and visual design. This is a collection of my personal and creative projects.">
-  <meta property="og:image" content="https://vuc.tiiny.site/portfolio.png.image.png">
-
-  <!-- Twitter Meta Tags -->
+    content="A Notion-style collection of projects spanning AI/ML, hardware, web, motion graphics, and 3D.">
+  <meta property="og:image" content="assets/band.jpg">
   <meta name="twitter:card" content="summary_large_image">
-  <meta property="twitter:domain" content="mizly.design">
-  <meta property="twitter:url" content="https://mizly.design">
   <meta name="twitter:title" content="Vu Cao - Portfolio">
   <meta name="twitter:description"
-    content="I’m a 3rd year Computer Science student exploring machine learning, music, and visual design. This is a collection of my personal and creative projects.">
-  <meta name="twitter:image" content="https://vuc.tiiny.site/portfolio.png.image.png">
-
-  <!-- Meta Tags Generated via https://www.opengraph.xyz -->
-  <style>
-    @media(max-width: 500px) {
-      .columns {
-        flex-direction: column;
-        display: flex;
-      }
-    }
-
-    @media(max-width: 500px) {
-      .reverse-columns {
-        flex-direction: column-reverse;
-        display: flex;
-      }
-    }
-
-    .titled {
-      font-family: 'Merriweather', serif !important;
-      font-size: 58px !important;
-      font-weight: 400 !important;
-      line-height: 64px !important;
-    }
-
-    @media (max-width: 1024px) {
-
-      /* Tablet and smaller devices */
-      .titled {
-        font-size: 48px !important;
-        line-height: 54px !important;
-      }
-    }
-
-    @media (max-width: 768px) {
-
-      /* Mobile devices */
-      .titled {
-        font-size: 36px !important;
-        line-height: 42px !important;
-      }
-    }
-
-    @media (max-width: 480px) {
-
-      /* Small mobile devices */
-      .titled {
-        font-size: 28px !important;
-        line-height: 34px !important;
-      }
-    }
-
-
-    .subtitled {
-      font-family: 'Merriweather', serif !important;
-      font-size: 20px !important;
-      font-weight: 400 !important;
-      line-height: 36px !important;
-      padding-bottom: 36px !important;
-    }
-
-    @media (max-width: 1024px) {
-
-      /* Tablet and smaller devices */
-      .subtitled {
-        font-size: 18px !important;
-        line-height: 32px !important;
-        padding-bottom: 32px !important;
-      }
-    }
-
-    @media (max-width: 768px) {
-
-      /* Mobile devices */
-      .subtitled {
-        font-size: 16px !important;
-        line-height: 28px !important;
-        padding-bottom: 28px !important;
-      }
-    }
-
-    @media (max-width: 480px) {
-
-      /* Small mobile devices */
-      .subtitled {
-        font-size: 14px !important;
-        line-height: 24px !important;
-        padding-bottom: 24px !important;
-      }
-    }
-
-
-    .header-text {
-      font-size: 18px !important;
-      font-weight: 600 !important;
-      line-height: 0px !important;
-    }
-  </style>
+    content="A Notion-style collection of projects spanning AI/ML, hardware, web, motion graphics, and 3D.">
+  <meta name="twitter:image" content="assets/band.jpg">
+  <link rel="stylesheet" href="index.css">
+  <link rel="icon" href="assets/band.jpg" type="image/jpeg">
 </head>
 
 <body>
-  <nav class="navbar is-dark is-fixed-top" role="navigation" aria-label="main navigation">
-    <div class="navbar-brand">
-      <a class="navbar-item" href="#">
-        <h1 class="header-text">
-          Vu Cao
-        </h1>
-      </a>
+  <header class="site-nav">
+    <nav aria-label="Portfolio navigation">
+      <a href="#top">About</a>
+      <a href="#projects" data-category="all">Projects</a>
+      <button type="button" data-category="ai-ml" aria-pressed="false">AI/ML</button>
+      <button type="button" data-category="hardware" aria-pressed="false">Hardware</button>
+      <button type="button" data-category="web" aria-pressed="false">Web</button>
+      <button type="button" data-category="motion-design" aria-pressed="false">Motion Design</button>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
 
-      <a role="button" class="navbar-burger has-text-light" aria-label="menu" aria-expanded="true"
-        data-target="navbar-menu-id">
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-      </a>
-    </div>
+  <div class="portfolio-shell">
+    <main class="notion-page" id="top">
+    <section class="page-header" aria-labelledby="page-title">
+      <p class="breadcrumb">Vu Cao / Portfolio</p>
+      <h1 id="page-title">Welcome!</h1>
+    </section>
 
-    <div id="navbar-menu-id" class="navbar-menu">
-
-      <div class="navbar-end">
-        <a class="navbar-item" href="#">
-          <h1 class="header-text">
-            Home
-          </h1>
-        </a>
-
-        <a class="navbar-item" href="#about">
-          <h1 class="header-text">
-            About
-          </h1>
-        </a>
-
-        <a class="navbar-item" href="#projects">
-          <h1 class="header-text">
-            Projects
-          </h1>
-        </a>
-
-        <a class="navbar-item" href="#design">
-          <h1 class="header-text">
-            Designs
-          </h1>
-        </a>
-
-        <a class="navbar-item" href="#contact">
-          <h1 class="header-text">
-            Contact
-          </h1>
-        </a>
-
+    <section class="intro-grid" id="about" aria-label="About Vu Cao">
+      <div class="intro-copy">
+        <p>Hi! I'm Vu Cao, a 4th year Computer Science student at Carleton University.</p>
+        <p>I'm currently:</p>
+        <ul>
+          <li>Building playful AI, hardware, and web creations.</li>
+          <li>Nurturing my skills in music, motion graphics, 3D, and visual design.</li>
+        </ul>
+        <section class="links-row" aria-label="Links">
+          <a href="mailto:vu.khanh.cao@gmail.com">Email</a>
+          <a href="https://github.com/mizly/" target="_blank" rel="noreferrer">GitHub</a>
+          <a href="https://www.linkedin.com/in/vu-k-cao/" target="_blank" rel="noreferrer">LinkedIn</a>
+          <a href="Vu Cao - Resume.pdf" target="_blank" rel="noreferrer">Resume</a>
+        </section>
       </div>
 
-    </div>
-  </nav>
+      <figure class="main-photo">
+        <img src="assets/band.jpg" alt="Vu Cao with bandmates">
+        <figcaption>Photo: Amy Dao</figcaption>
+      </figure>
+    </section>
 
-  <!-- Hero del producto -->
-  <section class="hero is-dark">
-    <div class="hero-body profile">
-      <div class="container">
-        <div class="columns is-vcentered reverse-columns">
-          <div class="column
-          is-10-mobile 
-          is-10-tablet 
-          is-5-desktop 
-          is-5-widescreen 
-          is-5-fullhd " data-aos="fade-down">
-            <h1 class="title titled is-1 mb-6">
-              Hi, I'm Vu Cao! I'm a <span id="biography" class="has-text-dark has-background-light"></span>
-            </h1>
+    <hr>
 
-            <h2 class="subtitle subtitled">
-              3rd year CS @ Carleton University
-            </h2>
-            <div class="buttons">
-              <a href="https://github.com/mizly/" target="_blank"
-                class="button is-light is-large is-size-6-mobile is-size-4-desktop">
-                <span class="icon">
-                  <i class="fab fa-github"></i>
-                </span>
-                <span>GitHub</span>
-              </a>
+    <section class="projects-heading" id="projects" aria-labelledby="projects-title">
+      <h2 id="projects-title">Projects</h2>
+    </section>
 
-              <a href="https://www.linkedin.com/in/vu-k-cao/" target="_blank"
-                class="button is-link is-large is-size-6-mobile is-size-4-desktop">
-                <span class="icon">
-                  <i class="fab fa-linkedin"></i>
-                </span>
-                <span>LinkedIn</span>
-              </a>
+    <section class="category-tabs" aria-label="Project filters">
+      <button type="button" data-category="all" aria-pressed="true">All</button>
+      <button type="button" data-category="ai-ml" aria-pressed="false">AI/ML</button>
+      <button type="button" data-category="hardware" aria-pressed="false">Hardware</button>
+      <button type="button" data-category="web" aria-pressed="false">Web</button>
+      <button type="button" data-category="motion-design" aria-pressed="false">Motion Design</button>
+    </section>
 
-              <a href="https://www.youtube.com/mizly" target="_blank"
-                class="button is-danger is-large is-size-6-mobile is-size-4-desktop">
-                <span class="icon">
-                  <i class="fab fa-youtube"></i>
-                </span>
-                <span>YouTube</span>
-              </a>
+    <div id="project-categories" class="project-categories" aria-live="polite"></div>
 
+    <footer id="contact">
+      <p>Publications and further info available upon request.</p>
+      <a href="mailto:vu.khanh.cao@gmail.com">vu.khanh.cao@gmail.com</a>
+    </footer>
+    </main>
+  </div>
 
-            </div>
-          </div>
-          <div data-aos="fade-right" id="bruh">
-            <figure class="image" style="padding-top: 10%;">
-              <img id="pfp" src="chill guy_00000.png">
-            </figure>
-          </div>
-
-        </div>
+  <div class="motion-modal" id="motion" aria-hidden="true">
+    <div class="motion-modal-backdrop" data-modal-close></div>
+    <section class="motion-modal-panel" role="dialog" aria-modal="true" aria-labelledby="motion-title">
+      <header class="motion-modal-header">
+        <h2 id="motion-title">Assorted Works - Motion Design</h2>
+        <button type="button" class="modal-close" aria-label="Close motion design gallery" data-modal-close>Close</button>
+      </header>
+      <div class="gallery-grid">
+        <video autoplay muted loop playsinline controls>
+          <source src="assets/designs/yorushika.mov">
+        </video>
+        <video autoplay muted loop playsinline controls>
+          <source src="assets/designs/hmm.mp4">
+        </video>
+        <video autoplay muted loop playsinline controls>
+          <source src="assets/designs/val.mp4">
+        </video>
+        <img src="assets/designs/trivia.gif" alt="Trivia motion graphic">
+        <video autoplay muted loop playsinline controls>
+          <source src="assets/designs/girl in red.mp4">
+        </video>
+        <video autoplay muted loop playsinline controls>
+          <source src="assets/designs/hutao.mp4">
+        </video>
       </div>
-    </div>
-  </section>
-
-  <section class="hero is-light is-fullheight" id="about">
-    <div class="hero-body">
-      <div class="container">
-        <div class="columns  is-vcentered">
-          <div data-aos="fade-right" class="column
-">
-            <figure class="image">
-              <img src="assets/band.jpg">
-            </figure>
-          </div>
-          <div data-aos="fade-down" class="column
-          is-10-mobile
-          is-10-tablet
-          is-5-desktop is-offset-1-desktop
-          is-5-widescreen is-offset-1-widescreen
-          is-5-fullhd is-offset-1-fullhd">
-            <h1 class="titled title is-1 mb-6">
-              “everything you can imagine is real.” <span class="is-size-5 has-text-grey">- Pablo Picasso</span>
-            </h1>
-            <h2 class="subtitled subtitle">
-              I’m a 3rd year Computer Science student exploring machine learning, music, and visual design.
-              <br><br>
-              By combining technical knowledge and creative skills, I'm able to create engaging and unique interactive
-              experiences.
-            </h2>
-          </div>
-
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="hero is-dark is-fullheight" id="projects">
-    <div class="hero-body">
-      <div class="container">
-        <div data-aos="fade-down" class="column is-12  has-text-centered">
-          <h1 class="title titled is-1 mb-6">
-            Projects
-          </h1>
-          <h2 class="subtitle subtitled">
-            I've worked on many projects, here are some that I am most proud of!
-          </h2>
-
-        </div>
-
-        <div class="columns projects is-vcentered " style="display: flex; align-items: stretch;">
-          <div data-aos="fade-right" class="column is-4">
-            <div class="card is-shady has-background-light equal-height">
-              <header class="card-header no-shadow">
-                <p class="card-header-title has-text-dark is-size-4">GURT</p>
-                <a href="https://devpost.com/software/ground-unit-response-tank-g-u-r-t" target="_blank">
-                  <button class="card-header-icon" aria-label="Link">
-                    <span class="icon">
-                      <i class="fa-solid fa-arrow-up-right-from-square has-text-dark"></i>
-                    </span>
-                  </button>
-                </a>
-                <a href="https://github.com/mizly/gurt" target="_blank">
-                  <button class="card-header-icon" aria-label="Source Code">
-                    <span class="icon">
-                      <i class="fa-solid fa-code has-text-dark"></i>
-                    </span>
-                  </button>
-                </a>
-              </header>
-
-              <p class="card-header-title project-caption has-text-grey is-size-6 has-text-weight-normal">uOttaHack 8
-                | Jan 2026</p>
-              <div class="card-image">
-                <figure class="image is-4by3">
-                  <img src="assets/gurt.jpg" alt="Placeholder image" class="modal-button" data-target="modal-image2">
-                </figure>
-              </div>
-              <div class="card-content">
-                <div class="content has-text-dark">
-                  <p>
-                    Winning Best Hardware, Ground Unit Response Tank (GURT) is an arcade-style shooter game
-                    controlled through a web
-                    browser!
-                    <br><br>
-                    With our own custom hardware and camera drivers optimized for computer vision, GURT takes advantage
-                    of QNX to provide a
-                    smooth real-time experience with virtually no latency.
-
-                  </p>
-                  <span class="button is-dark is-outlined">QNX</span>
-                  <span class="button is-dark is-outlined">C</span>
-                  <span class="button is-dark is-outlined">Python</span>
-                  <span class="button is-dark is-outlined">FastAPI</span>
-                  <span class="button is-dark is-outlined">web3</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div data-aos="fade-right" class="column is-4">
-            <div class="card is-shady has-background-light equal-height">
-              <header class="card-header no-shadow">
-                <p class="card-header-title has-text-dark is-size-4">Wingman</p>
-                <a href="https://devpost.com/software/wingman-8w5i4b" target="_blank">
-                  <button class="card-header-icon" aria-label="Link">
-                    <span class="icon">
-                      <i class="fa-solid fa-arrow-up-right-from-square has-text-dark"></i>
-                    </span>
-                  </button>
-                </a>
-                <a href="https://github.com/mizly/wingman" target="_blank">
-                  <button class="card-header-icon" aria-label="Source Code">
-                    <span class="icon">
-                      <i class="fa-solid fa-code has-text-dark"></i>
-                    </span>
-                  </button>
-                </a>
-              </header>
-
-              <p class="card-header-title project-caption has-text-grey is-size-6 has-text-weight-normal">GenAi Genesis
-                | March 2025</p>
-              <div class="card-image">
-                <figure class="image is-4by3">
-                  <img src="assets/wingman.jpg" alt="Placeholder image" class="modal-button" data-target="modal-image2">
-                </figure>
-              </div>
-              <div class="card-content">
-                <div class="content has-text-dark">
-                  <p>
-                    Your assistant, your cute companion, and your best friend! He remembers your face, and is ready to
-                    follow you anywhere.
-                    <br><br>
-                    Wingman combines AI and hardware, and is able to switch between different personalities and
-                    emotions: all with just your voice. Has support for 4 different languages and Spotify integration.
-                  </p>
-                  <span class="button is-dark is-outlined">Arduino</span>
-                  <span class="button is-dark is-outlined">OpenCV</span>
-                  <span class="button is-dark is-outlined">MediaPipe</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div data-aos="fade-right" class="column is-4">
-            <div class="card is-shady has-background-light equal-height">
-              <header class="card-header no-shadow">
-                <p class="card-header-title has-text-dark is-size-4">jarvis.diy</p>
-                <a href="https://jarvis.diy" target="_blank">
-                  <button class="card-header-icon" aria-label="Link">
-                    <span class="icon">
-                      <i class="fa-solid fa-arrow-up-right-from-square has-text-dark"></i>
-                    </span>
-                  </button>
-                </a>
-                <a href="https://dorahacks.io/buidl/21579" target="_blank">
-                  <button class="card-header-icon" aria-label="Source Code">
-                    <span class="icon">
-                      <i class="fa-solid fa-code has-text-dark"></i>
-                    </span>
-                  </button>
-                </a>
-              </header>
-
-              <p class="card-header-title project-caption has-text-grey is-size-6 has-text-weight-normal">uOttaHack 7 |
-                January 2025</p>
-              <div class="card-image">
-                <figure class="image is-4by3">
-                  <img src="assets/jarvis demo.gif" alt="Placeholder image" class="modal-button"
-                    data-target="modal-image2">
-                </figure>
-              </div>
-              <div class="card-content">
-                <div class="content has-text-dark">
-                  <p>
-                    Powered by Blackberry QNX, JARVIS is an innovative integration of physical and digital processing to
-                    produce 3D views from 2D spatial data.
-                    <br><br>
-                    JARVIS provides a solution achieving 95% cost reduction ($20 vs. $400) that translates images/videos
-                    from ANY camera into web-ready 3D models. Utilizes machine learning and <a target="_blank"
-                      href="https://repo-sam.inria.fr/fungraph/3d-gaussian-splatting/">Gaussian Splatting</a>.
-                  </p>
-                  <span class="button is-dark is-outlined">Arduino</span>
-                  <span class="button is-dark is-outlined">QNX</span>
-                  <span class="button is-dark is-outlined">CUDA</span>
-                  <span class="button is-dark is-outlined">React.js</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-        </div>
-        <div class="columns projects is-vcentered " style="display: flex; align-items: stretch;">
-          <div data-aos="fade-right" class="column is-4">
-            <div class="card is-shady has-background-light equal-height">
-              <header class="card-header no-shadow">
-                <p class="card-header-title has-text-dark is-size-4">Walk in the Park</p>
-                <a href="https://devpost.com/software/walk-in-the-park" target="_blank">
-                  <button class="card-header-icon" aria-label="Link">
-                    <span class="icon">
-                      <i class="fa-solid fa-arrow-up-right-from-square has-text-dark"></i>
-                    </span>
-                  </button>
-                </a>
-                <a href="https://github.com/EdwinNgui/Walk-in-the-Park" target="_blank">
-                  <button class="card-header-icon" aria-label="Source Code">
-                    <span class="icon">
-                      <i class="fa-solid fa-code has-text-dark"></i>
-                    </span>
-                  </button>
-                </a>
-              </header>
-
-              <p class="card-header-title project-caption has-text-grey is-size-6 has-text-weight-normal">GenAI Genesis
-                | April 2024</p>
-              <div class="card-image">
-                <figure class="image is-4by3">
-                  <img src="assets/walk-in-the-park.jpg" alt="Placeholder image" class="modal-button"
-                    data-target="modal-image2">
-                </figure>
-              </div>
-              <div class="card-content">
-                <div class="content has-text-dark">
-                  <p>
-                    Winning Best AI in Education, this project encourages interaction, awareness and contribution
-                    towards local communities.
-                    <br><br>
-                    With a location based gaming experience similar to Pokémon Go, users can explore different locations
-                    to discover curated songs based on local communities, promoting cultural understanding.
-                  </p>
-                  <span class="button is-dark is-outlined">React Native</span>
-                  <span class="button is-dark is-outlined">Android Studio</span>
-                  <span class="button is-dark is-outlined">Gemini</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div data-aos="fade-right" class="column is-4">
-            <div class="card is-shady has-background-light equal-height">
-              <header class="card-header no-shadow">
-                <p class="card-header-title has-text-dark is-size-4">TRACY</p>
-                <a href="https://devpost.com/software/tracy-dm41vu" target="_blank">
-                  <button class="card-header-icon" aria-label="Link">
-                    <span class="icon">
-                      <i class="fa-solid fa-arrow-up-right-from-square has-text-dark"></i>
-                    </span>
-                  </button>
-                </a>
-                <a href="https://github.com/EdwinNgui/TRACY" target="_blank">
-                  <button class="card-header-icon" aria-label="Source Code">
-                    <span class="icon">
-                      <i class="fa-solid fa-code has-text-dark"></i>
-                    </span>
-                  </button>
-                </a>
-              </header>
-
-              <p class="card-header-title project-caption has-text-grey is-size-6 has-text-weight-normal">QHacks |
-                February 2024</p>
-              <div class="card-image">
-                <figure class="image is-4by3">
-                  <img src="assets/tracy.jpg" alt="Placeholder image" class="modal-button" data-target="modal-image2">
-                </figure>
-              </div>
-              <div class="card-content">
-                <div class="content has-text-dark">
-                  <p>
-                    TRACY took 3rd place at QHacks 2024 by combining computer vision and machine learning to analyze
-                    tennis gameplay.
-                    <br><br>
-                    TRACY helps athletes improve by providing trajectory graphs from a monocular viewpoint with up
-                    to 97% accuracy. With AI-driven insights, TRACY makes a mark in sports tech innovation.
-                  </p>
-                  <span class="button is-dark is-outlined">Python</span>
-                  <span class="button is-dark is-outlined">React.js</span>
-                  <span class="button is-dark is-outlined">OpenCV</span>
-                  <span class="button is-dark is-outlined">FFmpeg</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div data-aos="fade-right" class="column is-4">
-            <div class="card is-shady has-background-light equal-height">
-              <header class="card-header no-shadow">
-                <p class="card-header-title has-text-dark is-size-4">Melodica</p>
-                <a href="https://devpost.com/software/melodica-y0267b" target="_blank">
-                  <button class="card-header-icon" aria-label="Link">
-                    <span class="icon">
-                      <i class="fa-solid fa-arrow-up-right-from-square has-text-dark"></i>
-                    </span>
-                  </button>
-                </a>
-                <a href="https://github.com/FinityFly/melodica" target="_blank">
-                  <button class="card-header-icon" aria-label="Source Code">
-                    <span class="icon">
-                      <i class="fa-solid fa-code has-text-dark"></i>
-                    </span>
-                  </button>
-                </a>
-              </header>
-
-              <p class="card-header-title project-caption has-text-grey is-size-6 has-text-weight-normal"> MAIS Hacks |
-                November 2023</p>
-              <div class="card-image">
-                <figure class="image is-4by3">
-                  <img src="assets/melodica.png" alt="Placeholder image" class="modal-button"
-                    data-target="modal-image2">
-                </figure>
-              </div>
-              <div class="card-content">
-                <div class="content has-text-dark">
-                  <p>
-                    Winning Best Hack for All Arts, Melodica is a musician's Swiss Army knife, visualizing and isolating
-                    different instruments in realtime.
-                    <br><br>
-                    Melodica enables users to upload a song or music track, generating an interactive player with
-                    distinct instrumentals and audio tracks.
-                    Users can then manipulate and download each instrument track.
-                  </p>
-                  <span class="button is-dark is-outlined">Python</span>
-                  <span class="button is-dark is-outlined">three.js</span>
-                  <span class="button is-dark is-outlined">BasicPitch</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </div>
-
-  </section>
-
-  <section class="hero has-background-black-ter has-text-centered" id="design">
-    <div class="hero-body">
-      <div class="container">
-        <div data-aos="fade-down" class="column is-12">
-          <h1 class="title titled is-1 mb-6 has-text-light">
-            Designs
-          </h1>
-          <h2 class="subtitle subtitled has-text-light">
-            A small collection of my visual design work, animation, and motion graphics.
-          </h2>
-
-        </div>
-      </div>
-      <div class="columns projects is-vcentered " style="display: flex; align-items: stretch;">
-        <div data-aos="fade-right" class="column is-4">
-          <video style="width: 100%; height: 100%; object-fit: cover;" autoplay muted loop playsinline>
-            <source src="assets/designs/yorushika.mov">
-          </video>
-        </div>
-
-        <div data-aos="fade-right" class="column is-4">
-          <video style="width: 100%; height: 100%; object-fit: cover;" autoplay muted loop playsinline>
-            <source src="assets/designs/hmm.mp4">
-          </video>
-        </div>
-
-        <div data-aos="fade-right" class="column is-4">
-          <video style="width: 100%; height: 100%; object-fit: cover;" autoplay muted loop playsinline>
-            <source src="assets/designs/val.mp4">
-          </video>
-        </div>
-      </div>
-
-
-      <div class="columns projects is-vcentered " style="display: flex; align-items: stretch;">
-        <div data-aos="fade-right" class="column is-4">
-          <figure style="width: 100%; height: 100%; object-fit: cover;" class="image is-1by1">
-            <img src="assets/designs/trivia.gif" />
-          </figure>
-        </div>
-
-        <div data-aos="fade-right" class="column is-4">
-          <video style="width: 100%; height: 100%; object-fit: cover;" autoplay muted loop playsinline>
-            <source src="assets/designs/girl in red.mp4">
-          </video>
-        </div>
-
-        <div data-aos="fade-right" class="column is-4">
-          <video style="width: 100%; height: 100%; object-fit: cover;" autoplay muted loop playsinline>
-            <source src="assets/designs/hutao.mp4">
-          </video>
-        </div>
-      </div>
-
-      <div class="columns projects is-vcentered " style="display: flex; align-items: stretch;">
-        <div data-aos="fade-right" class="column is-6">
-          <video style="width: 100%; height: 100%; object-fit: cover;" autoplay muted loop playsinline>
-            <source src="assets/designs/jarvis.mp4">
-          </video>
-        </div>
-        <div data-aos="fade-right" class="column is-6">
-          <video style="width: 100%; height: 100%; object-fit: cover;" autoplay muted loop playsinline>
-            <source src="assets/designs/tracy.mp4">
-          </video>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <section class="hero is-dark is-medium has-text-centered" id="contact">
-    <div class="hero-body">
-      <div class="container">
-        <div class="columns is-centered">
-          <div data-aos="fade-down" class="column is-12">
-            <h1 class="title titled is-1 mb-6">
-              Contact
-            </h1>
-            <div class="buttons is-centered">
-              <a href="https://github.com/mizly/" target="_blank" class="button is-light">
-                <span class="icon">
-                  <i class="fab fa-github"></i>
-                </span>
-                <span>GitHub</span>
-              </a>
-
-              <a href="https://www.linkedin.com/in/vu-k-cao/" target="_blank" class="button is-link">
-                <span class="icon">
-                  <i class="fab fa-linkedin"></i>
-                </span>
-                <span>LinkedIn</span>
-              </a>
-
-              <a href="Vu Cao - Resume.pdf" target="_blank" download class="button is-light">
-                <span class="icon">
-                  <i class="fa-solid fa-address-card"></i>
-                </span>
-                <span>Resume</span>
-              </a>
-            </div>
-            <h2 class="subtitle subtitled">
-              Publications/further info available upon request at vu.khanh.cao@gmail.com
-            </h2>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/TypewriterJS/2.13.1/core.min.js"></script>
-  <script>
-    new Typewriter('#biography', {
-      strings: ['developer.', 'designer.', 'VFX artist.', 'musician.'],
-      autoStart: true,
-      loop: true,
-    });
-  </script>
-  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-  <script>
-    AOS.init({
-      once: true
-    });
-  </script>
+    </section>
+  </div>
 
   <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const imageElement = document.getElementById("pfp");
-      const images = ["chill guy_00000.png", "chill guy_00001.png"];
-      let currentIndex = 0;
+    const categories = [
+      { id: 'all', label: 'All' },
+      { id: 'ai-ml', label: 'AI/ML' },
+      { id: 'hardware', label: 'Hardware' },
+      { id: 'web', label: 'Web' },
+      { id: 'motion-design', label: 'Motion Design' },
+    ];
 
-      setInterval(() => {
-        currentIndex = (currentIndex + 1) % images.length;
-        imageElement.src = images[currentIndex];
-      }, 500); // Change image every 0.5s
-    });
-  </script>
+    const projects = [
+      {
+        title: 'GURT',
+        date: 'uOttaHack 8 | Jan 2026',
+        image: 'assets/gurt.jpg',
+        description: 'Winning Best Hardware, Ground Unit Response Tank is an arcade-style shooter game controlled through a web browser, built with custom hardware, camera drivers, and QNX for a smooth real-time experience.',
+        tools: ['QNX', 'C', 'Python', 'FastAPI', 'web3'],
+        tags: ['Hardware', 'Web'],
+        links: [
+          { label: 'Devpost', url: 'https://devpost.com/software/ground-unit-response-tank-g-u-r-t' },
+          { label: 'Code', url: 'https://github.com/mizly/gurt' },
+        ],
+      },
+      {
+        title: 'Wingman',
+        date: 'GenAI Genesis | March 2025',
+        image: 'assets/wingman.jpg',
+        description: 'A cute AI companion that remembers your face, follows you around, switches personalities and emotions by voice, supports four languages, and integrates with Spotify.',
+        tools: ['Arduino', 'OpenCV', 'MediaPipe'],
+        tags: ['AI/ML', 'Hardware'],
+        links: [
+          { label: 'Devpost', url: 'https://devpost.com/software/wingman-8w5i4b' },
+          { label: 'Code', url: 'https://github.com/mizly/wingman' },
+        ],
+      },
+      {
+        title: 'JARVIS',
+        date: 'uOttaHack 7 | Jan 2025',
+        image: 'assets/jarvis demo.gif',
+        description: 'A low-cost physical-to-digital pipeline that turns camera footage into web-ready 3D views using QNX, machine learning, and Gaussian Splatting.',
+        tools: ['Arduino', 'QNX', 'CUDA', 'React.js'],
+        tags: ['AI/ML', 'Hardware', 'Web'],
+        links: [
+          { label: 'DoraHacks', url: 'https://dorahacks.io/buidl/21579' },
+        ],
+      },
+      {
+        title: 'Walk in the Park',
+        date: 'GenAI Genesis | April 2024',
+        image: 'assets/walk-in-the-park.jpg',
+        description: 'Winner of Best AI in Education, this location-based mobile experience helps users explore communities through curated songs and cultural discovery.',
+        tools: ['React Native', 'Android Studio', 'Gemini'],
+        tags: ['AI/ML', 'Web'],
+        links: [
+          { label: 'Devpost', url: 'https://devpost.com/software/walk-in-the-park' },
+          { label: 'Code', url: 'https://github.com/EdwinNgui/Walk-in-the-Park' },
+        ],
+      },
+      {
+        title: 'TRACY',
+        date: 'QHacks | Feb 2024',
+        image: 'assets/tracy.jpg',
+        description: 'A sports-tech project that combines computer vision and machine learning to analyze tennis gameplay and create trajectory graphs from a monocular viewpoint.',
+        tools: ['Python', 'React.js', 'OpenCV', 'FFmpeg'],
+        tags: ['AI/ML', 'Web'],
+        links: [
+          { label: 'Devpost', url: 'https://devpost.com/software/tracy-dm41vu' },
+          { label: 'Code', url: 'https://github.com/EdwinNgui/TRACY' },
+        ],
+      },
+      {
+        title: 'Melodica',
+        date: 'MAIS Hacks | Nov 2023',
+        image: 'assets/melodica.png',
+        description: 'Winner of Best Hack for All Arts, Melodica visualizes and isolates instruments in real time, generating an interactive player with editable tracks.',
+        tools: ['Python', 'three.js', 'BasicPitch'],
+        tags: ['AI/ML', 'Web'],
+        links: [
+          { label: 'Devpost', url: 'https://devpost.com/software/melodica-y0267b' },
+          { label: 'Code', url: 'https://github.com/FinityFly/melodica' },
+        ],
+      },
+      {
+        title: 'Assorted Works - Motion Design',
+        date: 'Motion Design',
+        image: 'assets/designs/girl in red.mp4',
+        description: 'A collection of animation, VFX, and design loops spanning music visuals, fan edits, interface moments, and experimental motion studies.',
+        tools: ['After Effects', 'Animation', 'VFX'],
+        tags: ['Motion Design'],
+        links: [
+          { label: 'Gallery', url: '#motion' },
+          { label: 'Instagram', url: 'https://instagram.com/mizlyuwu' },
+        ],
+      },
+    ];
 
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
+    const container = document.querySelector('#project-categories');
+    const filterButtons = document.querySelectorAll('[data-category]');
+    const motionModal = document.querySelector('#motion');
 
-      // Get all "navbar-burger" elements
-      const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+    function makeLink(link) {
+      const externalAttrs = link.url.startsWith('#') ? '' : ' target="_blank" rel="noreferrer"';
+      return `<a href="${link.url}"${externalAttrs}>${link.label}</a>`;
+    }
 
-      // Add a click event on each of them
-      $navbarBurgers.forEach(el => {
-        el.addEventListener('click', () => {
+    function makeProject(project) {
+      const links = project.links.length
+        ? `<div class="project-links">${project.links.map(makeLink).join('')}</div>`
+        : '';
+      const isVideoThumbnail = /\.(mp4|mov|webm)$/i.test(project.image);
+      const thumbnail = isVideoThumbnail
+        ? `<video src="${project.image}" aria-label="${project.title}" autoplay muted loop playsinline></video>`
+        : `<img src="${project.image}" alt="${project.title}">`;
 
-          // Get the target from the "data-target" attribute
-          const target = el.dataset.target;
-          const $target = document.getElementById(target);
+      return `
+        <article class="project-row">
+          <a class="project-image" href="${project.links[0]?.url || '#projects'}"${project.links[0] && !project.links[0].url.startsWith('#') ? ' target="_blank" rel="noreferrer"' : ''}>
+            ${thumbnail}
+          </a>
+          <div class="project-body">
+            <div class="project-title-line">
+              <h3>${project.title}</h3>
+              <span>${project.date}</span>
+            </div>
+            <p>${project.description}</p>
+            <div class="pill-row">
+              ${project.tags.map((tag) => `<span class="tag-pill">${tag}</span>`).join('')}
+            </div>
+            <div class="tool-row">
+              ${project.tools.map((tool) => `<span>${tool}</span>`).join('')}
+            </div>
+            ${links}
+          </div>
+        </article>
+      `;
+    }
 
-          // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
-          el.classList.toggle('is-active');
-          $target.classList.toggle('is-active');
+    function renderProjects(categoryId = 'all') {
+      const category = categories.find((item) => item.id === categoryId) || categories[0];
+      const categoryProjects = category.id === 'all'
+        ? projects
+        : projects.filter((project) => project.tags.includes(category.label));
 
-        });
+      container.innerHTML = `
+        <section class="category-section" id="filtered-projects">
+          <details open>
+            <summary>
+              <span>${category.label}</span>
+              <em>${categoryProjects.length}</em>
+            </summary>
+            <div class="project-list">
+              ${categoryProjects.map(makeProject).join('')}
+            </div>
+          </details>
+        </section>
+      `;
+
+      filterButtons.forEach((button) => {
+        const isActive = button.dataset.category === category.id;
+        button.classList.toggle('is-active', isActive);
+        if (button.tagName === 'BUTTON') {
+          button.setAttribute('aria-pressed', String(isActive));
+        }
       });
+    }
 
+    filterButtons.forEach((button) => {
+      button.addEventListener('click', () => {
+        renderProjects(button.dataset.category);
+      });
     });
+
+    function openMotionModal() {
+      motionModal.classList.add('is-open');
+      motionModal.setAttribute('aria-hidden', 'false');
+      document.body.classList.add('modal-open');
+      motionModal.querySelector('.modal-close').focus();
+    }
+
+    function closeMotionModal() {
+      motionModal.classList.remove('is-open');
+      motionModal.setAttribute('aria-hidden', 'true');
+      document.body.classList.remove('modal-open');
+      if (window.location.hash === '#motion') {
+        history.pushState(null, '', window.location.pathname + window.location.search);
+      }
+    }
+
+    document.addEventListener('click', (event) => {
+      const motionLink = event.target.closest('a[href="#motion"]');
+      if (motionLink) {
+        event.preventDefault();
+        history.pushState(null, '', '#motion');
+        openMotionModal();
+      }
+
+      if (event.target.closest('[data-modal-close]')) {
+        closeMotionModal();
+      }
+    });
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && motionModal.classList.contains('is-open')) {
+        closeMotionModal();
+      }
+    });
+
+    if (window.location.hash === '#motion') {
+      openMotionModal();
+    }
+
+    renderProjects();
   </script>
 </body>
 
