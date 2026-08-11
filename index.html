@@ -40,52 +40,69 @@
 
   <div class="portfolio-shell">
     <main class="notion-page" id="top">
-    <section class="page-header" aria-labelledby="page-title">
-      <p class="breadcrumb">Vu Cao / Portfolio</p>
-      <h1 id="page-title">Welcome!</h1>
-    </section>
+      <section class="page-header" aria-labelledby="page-title">
+        <p class="breadcrumb">Vu Cao / Portfolio</p>
+        <h1 id="page-title">Welcome!</h1>
+      </section>
 
-    <section class="intro-grid" id="about" aria-label="About Vu Cao">
-      <div class="intro-copy">
-        <p>Hi! I'm Vu, a Computer Science student at Carleton University.</p>
-        <p>I love exploring the intersection of technology and art by building playful AI, hardware, and web creations (artist first, programmer second :p)</p>
-        <p>When I'm not working, you'll likely find me building Ottawa's <a href="https://moridori.xyz/" target="_blank" rel="noreferrer">diy music scene</a> with <a href="https://www.instagram.com/pomelosoda_band/" target="_blank" rel="noreferrer">my friends</a> :)</p>
+      <section class="intro-grid" id="about" aria-label="About Vu Cao">
+        <div class="intro-copy">
+          <p>Hi! I'm Vu, a Computer Science student at Carleton University.</p>
+          <p>I love exploring the intersection of technology and art by building playful AI, hardware, and web creations
+            (artist first, programmer second :p)</p>
+          <p>When I'm not working, you'll likely find me building Ottawa's <a href="https://moridori.xyz/"
+              target="_blank" rel="noreferrer">diy music scene</a> with <a
+              href="https://www.instagram.com/pomelosoda_band/" target="_blank" rel="noreferrer">my friends</a> :)</p>
 
-        <section class="links-row" aria-label="Links">
-          <a href="mailto:vu.khanh.cao@gmail.com">Email</a>
-          <a href="https://github.com/mizly/" target="_blank" rel="noreferrer">GitHub</a>
-          <a href="https://www.linkedin.com/in/vu-k-cao/" target="_blank" rel="noreferrer">LinkedIn</a>
-          <a href="Vu Cao - Resume.pdf" target="_blank" rel="noreferrer">CV</a>
-        </section>
-      </div>
+          <section class="links-row" aria-label="Links">
+            <a href="mailto:vu.khanh.cao@gmail.com">Email</a>
+            <a href="https://github.com/mizly/" target="_blank" rel="noreferrer">GitHub</a>
+            <a href="https://www.linkedin.com/in/vu-k-cao/" target="_blank" rel="noreferrer">LinkedIn</a>
+            <a href="Vu Cao - Resume.pdf" target="_blank" rel="noreferrer">CV</a>
+          </section>
+        </div>
 
-      <figure class="main-photo">
-        <img src="assets/band.jpg" alt="Vu Cao with bandmates">
-        <figcaption>(right) performing sold out venue with friends</figcaption>
-      </figure>
-    </section>
+        <figure class="main-photo">
+          <img src="assets/band.jpg" alt="Vu Cao with bandmates">
+          <figcaption>(right) performing sold out venue with friends</figcaption>
+        </figure>
+      </section>
 
-    <hr>
+      <hr>
 
-    <section class="projects-heading" id="projects" aria-labelledby="projects-title">
-      <h2 id="projects-title">Projects</h2>
-    </section>
+      <section class="projects-heading" id="projects" aria-labelledby="projects-title">
+        <h2 id="projects-title">Projects</h2>
+      </section>
 
-    <section class="category-tabs" aria-label="Project filters">
-      <button type="button" data-category="all" aria-pressed="true">All</button>
-      <button type="button" data-category="ai-ml" aria-pressed="false">AI/ML</button>
-      <button type="button" data-category="hardware" aria-pressed="false">Hardware</button>
-      <button type="button" data-category="web" aria-pressed="false">Web</button>
-      <button type="button" data-category="motion-design" aria-pressed="false">Motion Design</button>
-    </section>
+      <section class="category-tabs" aria-label="Project filters">
+        <button type="button" data-category="all" aria-pressed="true">All</button>
+        <button type="button" data-category="ai-ml" aria-pressed="false">AI/ML</button>
+        <button type="button" data-category="hardware" aria-pressed="false">Hardware</button>
+        <button type="button" data-category="web" aria-pressed="false">Web</button>
+        <button type="button" data-category="motion-design" aria-pressed="false">Motion Design</button>
+      </section>
 
-    <div id="project-categories" class="project-categories" aria-live="polite"></div>
+      <div id="project-categories" class="project-categories" aria-live="polite"></div>
 
-    <footer id="contact">
-      <a href="Vu Cao - Resume.pdf" target="_blank" rel="noreferrer">CV</a>
-      <p>Publications and further info available upon request.</p>
-      <a href="mailto:vu.khanh.cao@gmail.com">vu.khanh.cao@gmail.com</a>
-    </footer>
+      <footer id="contact" class="contact-section" aria-labelledby="contact-title">
+        <div class="contact-heading">
+          <p class="contact-eyebrow">( ^ _ ^ )</p>
+          <h2 id="contact-title">Say hi!</h2>
+          <p>Have a project in mind, want to collaborate, or just want to talk about art and technology? Feel free to
+            reach out.</p>
+        </div>
+
+        <div class="contact-actions">
+          <a class="contact-email" href="mailto:vu.khanh.cao@gmail.com">vu.khanh.cao@gmail.com</a>
+          <div class="contact-links" aria-label="Contact links">
+            <a href="https://github.com/mizly/" target="_blank" rel="noreferrer">GitHub</a>
+            <a href="https://www.linkedin.com/in/vu-k-cao/" target="_blank" rel="noreferrer">LinkedIn</a>
+            <a href="Vu Cao - Resume.pdf" target="_blank" rel="noreferrer">CV</a>
+          </div>
+        </div>
+
+        <p class="contact-note">Publications and further info available upon request.</p>
+      </footer>
     </main>
   </div>
 
@@ -94,7 +111,8 @@
     <section class="motion-modal-panel" role="dialog" aria-modal="true" aria-labelledby="motion-title">
       <header class="motion-modal-header">
         <h2 id="motion-title">Assorted Works - Motion Design</h2>
-        <button type="button" class="modal-close" aria-label="Close motion design gallery" data-modal-close>Close</button>
+        <button type="button" class="modal-close" aria-label="Close motion design gallery"
+          data-modal-close>Close</button>
       </header>
       <div class="gallery-grid">
         <video autoplay muted loop playsinline controls>
@@ -128,6 +146,17 @@
 
     const projects = [
       {
+        title: 'Aether',
+        date: 'February 2026',
+        image: 'assets/aether.png',
+        description: 'Initially a SaaS generating $10k MRR with 2000+ users, Aether is an open-source tool that saves each user hundreds of hours by automating repetitive tasks.',
+        tools: ['Java', 'TypeScript', 'Next.js'],
+        tags: ['Hardware', 'Web'],
+        links: [
+          { label: 'GitHub', url: 'https://github.com/mizly/aether' },
+        ],
+      },
+      {
         title: 'GURT',
         date: 'uOttaHack 8 | Jan 2026',
         image: 'assets/gurt.jpg',
@@ -136,7 +165,7 @@
         tags: ['Hardware', 'Web'],
         links: [
           { label: 'Devpost', url: 'https://devpost.com/software/ground-unit-response-tank-g-u-r-t' },
-          { label: 'Code', url: 'https://github.com/mizly/gurt' },
+          { label: 'GitHub', url: 'https://github.com/mizly/gurt' },
         ],
       },
       {
@@ -148,7 +177,7 @@
         tags: ['AI/ML', 'Hardware'],
         links: [
           { label: 'Devpost', url: 'https://devpost.com/software/wingman-8w5i4b' },
-          { label: 'Code', url: 'https://github.com/mizly/wingman' },
+          { label: 'GitHub', url: 'https://github.com/mizly/wingman' },
         ],
       },
       {
@@ -171,7 +200,7 @@
         tags: ['AI/ML', 'Web'],
         links: [
           { label: 'Devpost', url: 'https://devpost.com/software/walk-in-the-park' },
-          { label: 'Code', url: 'https://github.com/EdwinNgui/Walk-in-the-Park' },
+          { label: 'GitHub', url: 'https://github.com/EdwinNgui/Walk-in-the-Park' },
         ],
       },
       {
@@ -183,7 +212,7 @@
         tags: ['AI/ML', 'Web'],
         links: [
           { label: 'Devpost', url: 'https://devpost.com/software/tracy-dm41vu' },
-          { label: 'Code', url: 'https://github.com/EdwinNgui/TRACY' },
+          { label: 'GitHub', url: 'https://github.com/EdwinNgui/TRACY' },
         ],
       },
       {
@@ -195,7 +224,7 @@
         tags: ['AI/ML', 'Web'],
         links: [
           { label: 'Devpost', url: 'https://devpost.com/software/melodica-y0267b' },
-          { label: 'Code', url: 'https://github.com/FinityFly/melodica' },
+          { label: 'GitHub', url: 'https://github.com/FinityFly/melodica' },
         ],
       },
       {

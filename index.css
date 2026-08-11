@@ -541,14 +541,65 @@ body.modal-open {
   font: inherit;
 }
 
-footer {
-  margin-top: 44px;
-  padding-top: 24px;
+.contact-section {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(240px, 0.75fr);
+  gap: 28px;
+  margin-top: 64px;
+  padding: 32px 0 8px;
   border-top: 1px solid var(--line);
 }
 
-footer p {
-  margin-bottom: 4px;
+.contact-heading h2 {
+  margin-bottom: 8px;
+}
+
+.contact-heading > p:last-child {
+  max-width: 34rem;
+  margin-bottom: 0;
+  color: var(--muted);
+}
+
+.contact-eyebrow {
+  margin-bottom: 10px;
+  color: var(--muted);
+  font-size: 18px;
+  letter-spacing: 0.08em;
+}
+
+.contact-actions {
+  align-self: end;
+}
+
+.contact-email {
+  display: inline-block;
+  margin-bottom: 14px;
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration-thickness: 1px;
+}
+
+.contact-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.contact-links a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 30px;
+  padding: 4px 8px;
+  border-radius: 4px;
+  background: var(--sidebar);
+  text-decoration: none;
+}
+
+.contact-note {
+  grid-column: 1 / -1;
+  margin: 8px 0 0;
+  color: var(--muted);
+  font-size: 12px;
 }
 
 @media (max-width: 980px) {
@@ -559,6 +610,7 @@ footer p {
 
 @media (max-width: 720px) {
   .intro-grid,
+  .contact-section,
   .project-row {
     grid-template-columns: 1fr;
   }
