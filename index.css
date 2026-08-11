@@ -162,7 +162,7 @@ h3 {
   grid-template-columns: minmax(0, 1fr) minmax(240px, 320px);
   gap: 28px;
   align-items: start;
-  margin: 18px 0 24px;
+  margin: 0 0 24px;
 }
 
 .intro-copy p {
@@ -205,6 +205,7 @@ h3 {
 
 .main-photo {
   margin: 0;
+  padding-top: 24px;
 }
 
 .main-photo img {
