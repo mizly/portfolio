@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reverse engineering CoMaS - Vu Cao</title>
+  <meta name="description" content="A look at what Carleton's e-proctoring software can see, and why the privacy claims around it are a problem.">
+  <link rel="stylesheet" href="../../index.css">
+  <link rel="icon" href="https://static.wikia.nocookie.net/rfti/images/4/42/Pupsik.png" type="image/png">
+</head>
+
+<body>
+  <header class="site-nav">
+    <nav aria-label="Portfolio navigation">
+      <a href="../../">About</a>
+      <a href="../../#projects">Projects</a>
+      <a href="../" class="is-active" aria-current="page">Blog</a>
+      <a href="../../Vu Cao - Resume.pdf" target="_blank" rel="noreferrer">CV</a>
+      <a href="../../#contact">Contact</a>
+    </nav>
+  </header>
+
+  <div class="portfolio-shell">
+    <main class="notion-page">
+      <article class="blog-post">
+        <header class="page-header">
+          <p class="breadcrumb"><a href="../../">Vu Cao</a> / <a href="../">Blog</a></p>
+          <h1>Reverse engineering CoMaS</h1>
+          <p class="blog-post-meta">April 16, 2026 - 10 min read</p>
+        </header>
+
+        <h2>What is CoMaS?</h2>
+        <p>CoMas, is Carleton University’s proctoring spy- I mean software, used for online exams. It has been used in over 80,000 student examinations.</p>
+        <figure class="blog-figure">
+          <img src="assets/tweet-01.jpg" alt="Investigation screenshot 1">
+          <figcaption>From the creator of CoMaS's LinkedIn</figcaption>
+        </figure>
+        <p>Carleton says its CoMaS e-proctoring software is not invasive. From the <a href="https://carleton.ca/ses/online-exams/e-proctoring/#sect4" target="_blank" rel="noreferrer">CoMaS FAQ</a>:</p>
+        <blockquote>
+          <ul>
+            <li>It does not look at any files on your computer that are not open.</li>
+            <li>It does not record or look inside any of your files and documents, except for files inside the CoMaS folder that are generated on the desktop each time you log in.</li>
+            <li>It does not record any information from your browser history, cache, or cookies.</li>
+            <li>It does not look at network traffic or probe devices with which you communicate.</li>
+            <li>It does not record which applications you have installed. It records whether an application modifies a document or is visible on screen, without recording the content of any files.</li>
+          </ul>
+        </blockquote>
+        <p>But, is this really true?</p>
+
+        <h2>Reversing CoMaS</h2>
+        <p>(done on Windows)</p>
+        
+        <p>CoMaS is installed in <code>C:\Program Files\CoMaS\</code> in the user's home directory. It is an unobfuscated, unencrypted Java application to launch the app. After launch, it fetches an encrypted JAR from the server, decrypts it, and runs it.</p>
+        <figure class="blog-figure">
+          <img src="assets/comas launcher.png" alt="File Explorer showing the CoMaS folder and the selected CoMaS-0.8.76.jar file">
+          <figcaption>CoMaS Launcher</figcaption>
+        </figure>
+        <p>If you know anything about Java, you'll know that deobfuscating it is extremely trivial, as it compiles to bytecode and not machine code. Our first (and only) challenge is that the payload .jar, is not actually a .jar. The fetched payload <code>CoMaS-0.8.76.jar</code> does not start with the normal JAR/ZIP signature.</p>
+        <p>My first thought was to create a Java agent to intercept the decrypted payload as it is loaded in memory and save it to a file. This is a very easy and commonly seen method in reverse engineering, but turns out it wasn't even required.</p>
+        <figure class="blog-figure">
+          <img src="assets/temp.png" alt="temp folder">
+          <figcaption>temp folder...</figcaption>
+        </figure>
+        <p>Yeah. The decrypted version is simply stored in <code>%LOCALAPPDATA%\Temp</code>. You can literally just rename this to .jar, and your work is done. From here, use any Java decompiler on this unobfuscated file to see all the source code. </p>
+        <figure class="blog-figure">
+          <img src="assets/decompiled.png" alt="decompiled">
+          <figcaption>Decompiled .jar</figcaption>
+        </figure>
+        <p>You can do this yourself too! Open CoMaS, select "comas-its4.cogerent.com" as the server, then open <code>%LOCALAPPDATA%\Temp</code>, copy the newly created .tmp file and rename it to .jar. Congratulations, you just reverse-engineered the CoMaS application.</p>
+        <p><a href="https://github.com/iceangelsaint/comas" target="_blank" rel="noreferrer">GitHub repository</a></p>
+        <h2>Promises sometimes are just words</h2>
+        <p>According to <a href="https://web.archive.org/web/20260306144216/https://carleton.ca/ses/online-exams/e-proctoring/" target="_blank" rel="noreferrer">Carleton's website</a>, CoMaS "does not record information from your browser history, cache or cookies", it "does not record or look inside any of your files and documents", and "it does not look at network traffic and does not probe devices".</p>
+        <p> But guess what, <a href="https://github.com/iceangelsaint/comas/blob/main/edu/carleton/cas/resources/BrowserHistoryReader.java" target="_blank" rel="noreferrer">it does just that!</a>.</p>
+        
+        <figure class="blog-figure">
+          <img src="assets/tweet-03.jpg" alt="Investigation screenshot 3">
+          <figcaption>edu/carleton/cas/resources/BrowserHistoryReader.java</figcaption>
+        </figure>
+        <p>Not being transparent and straight up lying about what software does is unacceptable. It is troubling that CoMas seems to record browser history of students' devices, which directly contradicts what Carleton says about the software.</p>
+
+        <h2>bu- but, isn't this illegal??</h2>
+        <p>I believe that Reverse Engineering is NOT against the EULA, for 2 main reasons below.</p>
+        <ol>
+          <li>The EULA is not shown to the user properly.</li>
+          <li>The EULA does not prohibit reverse engineering.</li>
+        </ol>
+        <p><strong>Reason 1:</strong> The EULA is not accessible anywhere on the website, the instruction guide, during the download itself, during the installation process, or even after launching the program. No EULA is ever shown to the user. No EULA is bundled with the software either after it is installed.</p>
+        <p>In fact, a similar GitHub repository from 6 years ago had done the same thing: <a href="https://github.com/TASelwyn/CoMaS-Carleton" target="_blank" rel="noreferrer">TASelwyn/CoMaS-Carleton</a>. In the about section: "CoMaS client setup, no eula, no tos. Can't say it's illegal to redistribute if there's nothing saying against it."</p>
+        <p>Below are videos of me going through the steps to install the software, checking all possible pages where an EULA might be mentioned, and not finding any. I had clicked the link directly from the email, read the PDFs linked, and various searches for CoMas on Google to no avail.</p>
+        <ul>
+          <li><a href="https://drive.google.com/file/d/1CXUyr5YnM7hxsNP12R7cD1mwN4JSBANf/view?usp=drive_link" target="_blank" rel="noreferrer">Installation/EULA check video 1</a></li>
+          <li><a href="https://drive.google.com/file/d/1HdMAEIL2jgWdM0xgZRBXT5UNYkmm-uqT/view?usp=drive_link" target="_blank" rel="noreferrer">Installation/EULA check video 2</a></li>
+        </ul>
+        <p>If one were to dig carefully, there is a document that is accessible only from the email from an outdated instruction guide that you likely will not be able to find from internet searches. It mentions an EULA that must be accepted for each exam.</p>
+        <p>There are several things:</p>
+        <ul>
+          <li>If it must be accepted before every exam, it is reasonable to assume that the EULA is in effect during the exam only.</li>
+          <li>It is entirely possible to go through the entire software download, doing your absolute due diligence and checking for any EULA that might exist on the website, the download, the installation process, or even after launching the app itself without ever seeing the EULA. In fact, I had uninstalled the app, then reinstalled the app to reverse engineer it without ever seeing the EULA.</li>
+          <li>In fact, the only reason I was able to actually find what the EULA actually is is from the fact that I had reverse engineered the program, and saw what the exam text led to.</li>
+        </ul>
+        <p><strong>Reason 2:</strong> There are flaws with the <a href="https://cogerent.com/eula" target="_blank" rel="noreferrer">EULA itself</a> too.</p>
+        <blockquote>
+          <p>"By clicking the 'I Agree' button, downloading or using the Application, You are agreeing to be bound by the terms and conditions of this Agreement. If You do not agree to the terms of this Agreement, do not click on the 'I Agree' button, do not download or do not use the Application."</p>
+        </blockquote>
+        <p>This implies that the EULA is shown during the download stage, or even application launch stage, but this is not true. I was able to reverse engineer the software without seeing the EULA and agree to it.</p>
+        <blockquote>
+          <p>"You agree not to, and You will not permit others to: License, sell, rent, lease, assign, distribute, transmit, host, outsource, disclose or otherwise commercially exploit the Application or make the Application available to any third party."</p>
+        </blockquote>
+        <p>This doesn't seem to prohibit reverse engineering. It prohibits the user to "commercially exploit" the application, which I did not do. As for "make the Application available to any third party.": The code I shared on GitHub is merely my decompiled version of the code, the application is not able to be run from decompiled code unless you have advanced knowledge and familiarity with Java development.</p>
+        <p><a href="https://drive.google.com/file/d/1DPCs2OwfweFkY9jDhJpknUFdfU-nSySx/view?usp=drive_link" target="_blank" rel="noreferrer">Video discussing the EULA in detail</a></p>
+
+        <h2>Trust is part of the user experience</h2>
+        <p>What bothers me most is the communication. Carleton's privacy statements say that CoMaS does not record or look at browser history, network traffic, or running applications. The code appears to tell a different story.</p>
+        <p>That is not a small technicality. If a university says that its software does not access something, and the software accesses it anyway, students should probably be told. It is also not great when the software is proprietary and students are forced to install it on their personal computers without a clear explanation of what it can inspect.</p>
+        <p>Software can be technically functional and still be a terrible solution. Online exams are difficult to manage, but "it is only invasive for a little while" is not a substitute for transparency. At the very least, students should know what is being checked, what is being uploaded, and who can see it.</p>
+
+        <p>So when are they going to communicate this with us? Your move, Carleton.</p>
+
+        <a class="blog-back-link" href="../">&lt;- Back to blog</a>
+      </article>
+    </main>
+  </div>
+</body>
+
+</html>
